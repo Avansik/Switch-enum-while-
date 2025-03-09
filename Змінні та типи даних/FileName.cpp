@@ -169,7 +169,65 @@
  
 // }
 
+ //26.02.2025
+//#include <iostream>
+//using namespace std;
+//int main() {
+//    //1.Дано сторони прямокутника. Визначити чи прямокутник є квадратом.
+//    int length, width;
+//    cout << "Enter the length and width of the rectangle: ";
+//    cin >> length >> width;
+//    if (length == width) {
+//        cout << "This is a square." << endl;
+//    }
+//    else {
+//        cout << "This is a rectangle." << endl;
+//    }
+//
+//    // 2.Дано вік дитини. Виначити чи дитина по віку може навчатися у школі, чи може відвідувати дитсадок і т.і.
+//    int age;
+//    cout << "Enter the child's age: ";
+//    cin >> age;
+//    if (age >= 6 && age <= 17) {
+//        cout << "The child can study at school." << endl;
+//    }
+//    else if (age >= 3 && age < 6) {
+//        cout << "The child can attend kindergarten." << endl;
+//    }
+//    else {
+//        cout << "The child is already older than school age." << endl;
+//    }
+//
+//    //3.Дано 3 числа. Визначити чи рівно два серед них від’ємні.
+//    int a, b, c;
+//    cout << "Enter three numbers: ";
+//    cin >> a >> b >> c;
+//    int negativeCount = (a < 0) + (b < 0) + (c < 0);
+//    if (negativeCount == 2) {
+//        cout << "Exactly two numbers are negative." << endl;
+//    }
+//    else {
+//        cout << "Not exactly two numbers are negative." << endl;
+//    }
+//
+//    
+//    // 5.Дано три числа. Визначити чи тільки два з них рівні між собою.
+//    if ((a == b && a != c) || (a == c && a != b) || (b == c && b != a)) {
+//        cout << "Exactly two numbers are equal to each other." << endl;
+//    }
+//    else {
+//        cout << "Not exactly two numbers are equal to each other." << endl;
+//    }
+//
+//
+//}
+//
+// 
+
+
+  
  
+
   
  
 
