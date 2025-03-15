@@ -223,6 +223,68 @@
 //}
 //
 // 
+//15.03.2025
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     // Завдання 1
+//     int length, width;
+//     cout << "Enter the length and width of the rectangle: ";
+//     cin >> length >> width;
+//     if (length == width) {
+//         cout << "This is a square." << endl;
+//     }
+//     else {
+//         cout << "This is a rectangle." << endl;
+//     }
+
+//     // Завдання 2
+//     int num = 5;
+//     int factorial = 1;
+//     for (int i = 1; i <= num; ++i) {
+//         factorial *= i;
+//     }
+//     cout << "Factorial of " << num << ": " << factorial << endl;
+    
+
+//     // Завдання 3
+//     int number = 7;
+//     int isPrime = 1;
+//     if (number <= 1) {
+//         isPrime = 0;
+//     }
+//     else if (number == 2 || number == 3) {
+//         isPrime = 1;
+//     }
+//     else if (number % 2 == 0 || number % 3 == 0) {
+//         isPrime = 0;
+//     }
+//     else {
+//         for (int i = 5; i * i <= number; i += 6) {
+//             if (number % i == 0 || number % (i + 2) == 0) {
+//                 isPrime = 0;
+//                 break;
+//             }
+//         }
+//     }
+   
+
+
+//     // Завдання 5
+//     int a, b, c;
+//     cout << "Enter three numbers: ";
+//     cin >> a >> b >> c;
+//     if ((a == b && a != c) || (a == c && a != b) || (b == c && b != a)) {
+//         cout << "Exactly two numbers are equal." << endl;
+//     }
+//     else {
+//         cout << "Not exactly two numbers are equal." << endl;
+//     }
+
+//     return 0;
+// }
+
 
 
   
