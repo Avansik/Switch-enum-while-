@@ -336,6 +336,40 @@ int main() {
 
 
 
+//07.03.2025
+//#include <iostream>
+//    using namespace std;
+//    int countZeros(int arr[3][4])
+//  { 
+//        int zeroCount = 0;
+//        for (int i = 0; i < 3; ++i)
+//        {
+//            for (int j = 0; j < 4; ++j)
+//            {
+//                if (arr[i][j] == 0) 
+//                {
+//                    ++zeroCount;
+//                }
+//            }
+//        }
+//        return zeroCount;
+//  }
+//    int main()
+//    {
+//        int arr[3][4];
+//        cout << "Введіть елементи масиву 3x4:" << endl;
+//        for (int i = 0; i < 3; ++i)
+//        {
+//            for (int j = 0; j < 4; ++j) 
+//            {
+//                cin >> arr[i][j];
+//            }
+//        }
+//        cout << "Кількість елементів, що дорівнюють нулю: " << countZeros(arr) << endl;
+//
+//        return 0;
+//    }
+
 
 
 
