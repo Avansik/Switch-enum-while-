@@ -370,11 +370,130 @@ int main() {
 //        return 0;
 //    }
 
+//25.03.2025
+// #include <iostream>
+// #include <limits>
+// using namespace std;
+// int maxValue(int a, int b) 
+// {
+//     if (a > b) 
+//     {
+//         return a;
+//     } else 
+//     {
+//         return b;
+//     }
+// }
+
+// int maxValue(int a, int b, int c) 
+// {
+//     if (a >= b && a >= c) 
+//     {
+//         return a;
+//     } else if (b >= a && b >= c)
+//     {
+//        return b;
+//     } else 
+//     {
+//        return c;
+//     }
+// }
 
 
+// int minValue(int a, int b) 
+// {
+//    if (a < b) 
+//    {
+//         return a;
+//    } else
+//     {
+//         return b;
+//     }
+// }
+
+// int minValue(int a, int b, int c) 
+// {
+//     if (a <= b && a <= c) 
+//     {
+//        return a;
+//     } else if (b <= a && b <= c) 
+//     {
+//         return b;
+//     } else 
+//     {
+//         return c;
+//     }
+// }
 
 
+// int average(int arr[], int size) 
+// {
+//     if (size == 0) throw invalid_argument("The array is empty");
+//     int sum = 0;
+//     for (int i = 0; i < size; ++i) 
+//     {
+//        sum += arr[i];
+//     }
+//     return sum / size;
+// }
 
 
+// int maxInArray(int arr[], int size) 
+// {
+//     if (size == 0) throw invalid_argument("The array is empty");
+//     int maxVal = arr[0];
+//     for (int i = 1; i < size; ++i) 
+//     {
+//         if (arr[i] > maxVal) 
+//         {
+//             maxVal = arr[i];
+//         }
+//     }
+//     return maxVal;
+// }
 
 
+// int maxIn2DArray(int** arr, int rows, int cols)
+// {
+//     if (rows == 0 || cols == 0) throw invalid_argument("The array is empty");
+//     int maxVal = arr[0][0];
+//     for (int i = 0; i < rows; ++i) 
+//     {
+//        for (int j = 0; j < cols; ++j) 
+//        {
+//             if (arr[i][j] > maxVal) 
+//             {
+//                 maxVal = arr[i][j];
+//             }
+//        }
+//     }
+//     return maxVal;
+// }
+
+// int main()
+// {
+//     try
+//     {
+
+//         cout << "Max(5, 10): " << maxValue(5, 10) << endl;
+//         cout << "Max(3, 7, 2): " << maxValue(3, 7, 2) << endl;
+
+//         cout << "Min(5, 10): " << minValue(5, 10) << endl;
+//         cout << "Min(3, 7, 2): " << minValue(3, 7, 2) << endl;
+
+
+//         int arr1D[] = { 1, 2, 3, 4, 5 };
+//         cout << "Average of arr: " << average(arr1D, 5) << endl;
+//         cout << "Max in arr: " << maxInArray(arr1D, 5) << endl;
+
+
+//         int rows = 2, cols = 3;
+//         int** arr2D = new int* [rows];
+//         for (int i = 0; i < rows; ++i)
+//         {
+//             arr2D[i] = new int[cols] { i + 1, i + 5, i + 3 };
+//         }
+
+//         cout << "Max in arr: " << maxIn2DArray(arr2D, rows, cols) << endl;
+//     }
+// }
