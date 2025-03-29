@@ -553,3 +553,37 @@ void task2(int* arr, int size)
 
     cout << "Sum of elements: " << sum << endl;
 }
+
+
+
+
+
+
+
+
+
+
+////17.03.2025
+//#include <iostream>
+//using namespace std;
+//
+//void task3(int* arr, int size)
+//{
+//    int* min = arr, * max = arr;
+//    for (int i = 1; i < size; i++)
+//    {
+//        if (*(arr + i) < *min) min = arr + i;
+//        if (*(arr + i) > *max) max = arr + i;
+//    }
+//
+//    int temp = *min;
+//    *min = *max;
+//    *max = temp;
+//
+//    cout << "Array after replacement: ";
+//    for (int i = 0; i < size; i++)
+//    {
+//        cout << *(arr + i) << " ";
+//    }
+//    cout << endl;
+//}
