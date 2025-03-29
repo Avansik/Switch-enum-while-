@@ -497,3 +497,59 @@ int main() {
 //         cout << "Max in arr: " << maxIn2DArray(arr2D, rows, cols) << endl;
 //     }
 // }
+
+
+
+
+
+
+
+
+
+// 17.03.2025
+#include <iostream>
+using namespace std;
+
+// 1.Дано три числа. Оголосити вказівники на ці числа. Отримати добуток трьох 
+//заданих чисел, середє арифметичне, найменше з них, користуючись
+//непрямим доступом до чисел(через вказівники).
+void task1(int* a, int* b, int* c)
+{
+    int product = (*a) * (*b) * (*c);
+    double average = (*a + *b + *c) / 3.0;
+    int minus = min(*a, min(*b, *c));
+
+    cout << "Product: " << product << endl;
+    cout << "Arithmetic average: " << average << endl;
+    cout << "Minimum value: " << minus << endl;
+}
+
+// 2.Дано цілочисельний одновимірний масив. Заповнити його, 
+//вивести на екран у прямому та зворотньому порядку та порахувати
+//суму елементів з використанням вказівників.
+void task2(int* arr, int size)
+{
+    int sum = 0;
+    cout << "Massif: ";
+    for (int i = 0; i < size; i++)
+    {
+        cin >> *(arr + i);
+        sum += *(arr + i);
+    }
+
+    cout << "Direct order:  ";
+    for (int i = 0; i < size; i++) 
+    {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+
+    cout << "Inverse: ";
+    for (int i = size - 1; i >= 0; i--) 
+    {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+
+    cout << "Sum of elements: " << sum << endl;
+}
