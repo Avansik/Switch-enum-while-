@@ -637,3 +637,133 @@ int main()
     cout << "Arithmetic average:" << average << endl;
     cout << "The smallest number: " << minimum << endl;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+////26.03.2025
+//
+//
+//
+////
+////
+////Завдання 1.
+////Дано текст та символ(ввести з клавіатури).
+////Порахувати кількість входжень цього символа у рядку. (strchr)
+//
+//#include <iostream>
+//#include <cstring>
+//using namespace std;
+//
+//int main() 
+//{
+//    char text[100];
+//    char symbol;
+//    cout << "Enter a text: ";
+//    cin.getline(text, 100);
+//    cout << "Enter a symbol to count: ";
+//    cin >> symbol;
+//
+//    int count = 0;
+//    char* ptr = text;
+//
+//    while ((ptr = strchr(ptr, symbol)) != nullptr)
+//    {
+//        count++;
+//        ptr++;
+//    }
+//
+//    cout << "The symbol '" << symbol << "' appears " << count << " times in the text." << endl;
+//  
+//}
+////Завдання 2.
+////Дано текст та два символи(ввести з клавіатури).
+////Замінити у тексті один символ на інший. (strchr)
+////* *Зробити це не більше чим N разів
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//int main()
+//{
+//    char text[100];
+//    char oldChar, newChar;
+//    int N;
+//
+//    cout << "Enter a text: ";
+//    cin.getline(text, 100);
+//    cout << "Enter the symbol to replace: ";
+//    cin >> oldChar;
+//    cout << "Enter the symbol to replace with: ";
+//    cin >> newChar;
+//    cout << "Enter the maximum number of replacements: ";
+//    cin >> N;
+//
+//    int count = 0;
+//    char* ptr = text;
+//
+//    while ((ptr = strchr(ptr, oldChar)) != nullptr && count < N) {
+//        *ptr = newChar;
+//        count++;
+//        ptr++;
+//    }
+//
+//    cout << "Modified text: " << text << endl;
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+////Завдання 3.
+////Вводиться послідовність N слів(N вводиться з клавіатури).Об'єднати у окремий рядок слова, що  починаються та закінчуються на однакову букву.
+////strcat, strlen()
+//
+//int main() {
+//    int N;
+//    cout << "Enter the number of words: ";
+//    cin >> N;
+//
+//    char words[100][100], result[1000] = "";
+//
+//    cout << "Enter the words:" << endl;
+//    for (int i = 0; i < N; i++) {
+//        cin >> words[i];
+//    }
+//
+//    for (int i = 0; i < N; i++) {
+//        int len = strlen(words[i]);
+//        if (words[i][0] == words[i][len - 1]) {
+//            strcat(result, words[i]);
+//            strcat(result, " ");
+//        }
+//    }
+//
+//    cout << "Resulting string: " << result << endl;
+//    return 0;
+//}
