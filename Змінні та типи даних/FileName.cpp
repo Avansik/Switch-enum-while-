@@ -587,3 +587,53 @@ void task2(int* arr, int size)
 //    }
 //    cout << endl;
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 19.03.2025
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void matiz(int* a, int* b) 
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void ingridientu(int* arr, int size) 
+{
+    for (int i = 0; i < size; ++i) 
+    {
+       if (*(arr + i) < 0)
+       {
+          *(arr + i) = 0;
+       }
+    }
+}
+
+int main() 
+{
+    int a = 3, b = -5, c = 7;
+    int* A = &a, * B = &b, * C = &c;
+    int product = (*A) * (*B) * (*C);
+    double average = (*A + *B + *C) / 3.0;
+    int  minimum = min({ *A, *B, *C });
+    cout << "Product of numbers: " << product << endl;
+    cout << "Arithmetic average:" << average << endl;
+    cout << "The smallest number: " << minimum << endl;
+
