@@ -767,3 +767,87 @@ int main()
 //    cout << "Resulting string: " << result << endl;
 //    return 0;
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//03.21.2025
+#include <iostream>
+using namespace std;
+
+int main() {
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    int countA = 0, countO = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == 'a' || str[i] == 'A') {
+            countA++;
+        }
+        if (str[i] == 'o' || str[i] == 'O') {
+            countO++;
+        }
+    }
+
+    cout << "Count of 'a': " << countA << endl;
+    cout << "Count of 'o': " << countO << endl;
+
+    if (countA > countO) {
+        cout << "More 'a' letters." << endl;
+    }
+    else if (countO > countA) {
+        cout << "More 'o' letters." << endl;
+    }
+    else {
+        cout << "Equal number of 'a' and 'o' letters." << endl;
+    }
+
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    int letters = 0, digits = 0, spaces = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            letters++;
+        } else if (str[i] >= '0' && str[i] <= '9') {
+            digits++;
+        } else if (str[i] == ' ') {
+            spaces++;
+        }
+    }
+
+    cout << "Latin letters: " << letters << endl;
+    cout << "Digits: " << digits << endl;
+    cout << "Spaces: " << spaces << endl;
+ 
+   
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    cout << "Original string: " << str << endl;
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32; 
+        }
+    }
+
+    cout << "Modified string: " << str << endl;
+ 
+}
