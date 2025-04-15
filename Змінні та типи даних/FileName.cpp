@@ -1372,3 +1372,159 @@ int main() {
 
 
 
+//02.04.2025
+// Завдання 1: Структура "Бойлер"
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+struct Boiler {
+    string brand;
+    string color;
+    int power;
+    int capacity;
+    int temperature;
+};
+
+void inputBoiler(Boiler &b) {
+    cout << "Введіть фірму: "; cin >> b.brand;
+    cout << "Введіть колір: "; cin >> b.color;
+    cout << "Введіть потужність (Вт): "; cin >> b.power;
+    cout << "Введіть обсяг (л): "; cin >> b.capacity;
+    cout << "Введіть температуру (°C): "; cin >> b.temperature;
+}
+
+void printBoiler(const Boiler &b) {
+    cout << "Бойлер: " << b.brand << ", Колір: " << b.color
+         << ", Потужність: " << b.power << " Вт, Обсяг: " << b.capacity << " л, Температура: " << b.temperature << " °C\n";
+}
+
+void increaseTemp(Boiler &b, int delta) {
+    if (b.temperature + delta <= 100)
+        b.temperature += delta;
+    else
+        cout << "Помилка: температура не може перевищувати 100°C\n";
+}
+
+void decreaseTemp(Boiler &b, int delta) {
+    if (b.temperature - delta >= 0)
+        b.temperature -= delta;
+    else
+        cout << "Помилка: температура не може бути нижче 0°C\n";
+}
+
+bool comparePower(const Boiler &a, const Boiler &b) {
+    return a.power > b.power;
+}
+
+// Завдання 2: Структура Fraction
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+struct Fraction {
+    int numerator;
+    int denominator;
+
+    void reduce() {
+        int g = gcd(abs(numerator), abs(denominator));
+        numerator /= g;
+        denominator /= g;
+    }
+
+    void print() const {
+        cout << numerator << "/" << denominator << endl;
+    }
+
+    void printMixed() const {
+        int whole = numerator / denominator;
+        int rem = abs(numerator % denominator);
+        if (whole != 0) cout << whole;
+        if (rem != 0) cout << "(" << rem << "/" << denominator << ")";
+        if (whole == 0 && rem == 0) cout << 0;
+        cout << endl;
+    }
+};
+
+Fraction add(const Fraction &a, const Fraction &b) {
+    Fraction r;
+    r.numerator = a.numerator * b.denominator + b.numerator * a.denominator;
+    r.denominator = a.denominator * b.denominator;
+    r.reduce();
+    return r;
+}
+
+Fraction subtract(const Fraction &a, const Fraction &b) {
+    Fraction r;
+    r.numerator = a.numerator * b.denominator - b.numerator * a.denominator;
+    r.denominator = a.denominator * b.denominator;
+    r.reduce();
+    return r;
+}
+
+Fraction multiply(const Fraction &a, const Fraction &b) {
+    Fraction r;
+    r.numerator = a.numerator * b.numerator;
+    r.denominator = a.denominator * b.denominator;
+    r.reduce();
+    return r;
+}
+
+Fraction divide(const Fraction &a, const Fraction &b) {
+    Fraction r;
+    r.numerator = a.numerator * b.denominator;
+    r.denominator = a.denominator * b.numerator;
+    r.reduce();
+    return r;
+}
+
+// Завдання 3: Структура Product
+const int MAX_PRODUCTS = 100;
+
+struct Product {
+    string name;
+    string category;
+    double price;
+};
+
+void addProduct(Product products[], int &size) {
+    if (size >= MAX_PRODUCTS) return;
+    cout << "Назва: "; cin >> products[size].name;
+    cout << "Категорія: "; cin >> products[size].category;
+    cout << "Ціна: "; cin >> products[size].price;
+    size++;
+}
+
+void showProducts(const Product products[], int size) {
+    for (int i = 0; i < size; ++i)
+        cout << i+1 << ". " << products[i].name << " (" << products[i].category << ") - " << products[i].price << " грн\n";
+}
+
+void showByCategory(const Product products[], int size, const string &cat) {
+    for (int i = 0; i < size; ++i)
+        if (products[i].category == cat)
+            cout << products[i].name << " - " << products[i].price << " грн\n";
+}
+
+void showCheaperThan(const Product products[], int size, double maxPrice) {
+    for (int i = 0; i < size; ++i)
+        if (products[i].price < maxPrice)
+            cout << products[i].name << " - " << products[i].price << " грн\n";
+}
+
+void removeProduct(Product products[], int &size, int index) {
+    if (index < 0 || index >= size) return;
+    for (int i = index; i < size - 1; ++i)
+        products[i] = products[i + 1];
+    size--;
+}
+
+
+
+
+
+
+
+
+
