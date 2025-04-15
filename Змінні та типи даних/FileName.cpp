@@ -1524,7 +1524,206 @@ void removeProduct(Product products[], int &size, int index) {
 
 
 
+//04.04.2025
+#include <iostream>
+#include <fstream>
+#include <string>
 
+using namespace std;
 
+// ----------- Завдання 1: Точка ------------
+struct Point {
+    double x;
+    double y;
+};
+
+void inputPoint(Point & point) {
+    cout << "Enter x: ";
+    cin >> point.x;
+    cout << "Enter y: ";
+    cin >> point.y;
+}
+
+void printPoint(const Point & point) {
+    cout << "(" << point.x << ", " << point.y << ")" << endl;
+}
+
+void printPointsArray(const Point * pointsArray, int size) {
+    for (int i = 0; i < size; ++i) {
+        cout << i + 1 << ": ";
+        printPoint(pointsArray[i]);
+    }
+}
+
+void writePointToFileStream(const Point & point, ofstream& file) {
+    file << point.x << "\t" << point.y << endl;
+}
+
+void readPointFromFileStream(Point & point, ifstream& file) {
+    file >> point.x >> point.y;
+}
+
+// ----------- Завдання 2: Студент зі структурою Оцінки ------------
+const int SUBJECTS = 3;
+
+struct Grades {
+    int marks[SUBJECTS];
+};
+
+struct Student {
+    string name;
+    Grades grades;
+};
+
+double averageGrade(const Student & student) {
+    int sum = 0;
+    for (int i = 0; i < SUBJECTS; ++i) {
+        sum += student.grades.marks[i];
+    }
+    return (double)sum / SUBJECTS;
+}
+
+void inputStudent(Student & student) {
+    cout << "Enter name: ";
+    cin.ignore();
+    getline(cin, student.name);
+    cout << "Enter " << SUBJECTS << " grades: ";
+    for (int i = 0; i < SUBJECTS; ++i) {
+        cin >> student.grades.marks[i];
+    }
+}
+
+void printStudent(const Student & student) {
+    cout << "Name: " << student.name << ", Grades: ";
+    for (int i = 0; i < SUBJECTS; ++i) {
+        cout << student.grades.marks[i] << " ";
+    }
+    cout << "| Average: " << averageGrade(student) << endl;
+}
+
+void viewGroup(Student * group, int size) {
+    for (int i = 0; i < size; ++i) {
+        printStudent(group[i]);
+    }
+}
+
+void viewAbove10(Student * group, int size) {
+    for (int i = 0; i < size; ++i) {
+        if (averageGrade(group[i]) > 10) {
+            printStudent(group[i]);
+        }
+    }
+}
+
+void saveGroupToFile(Student * group, int size, const string & filename) {
+    ofstream file(filename);
+    if (!file) return;
+    file << size << endl;
+    for (int i = 0; i < size; ++i) {
+        file << group[i].name << endl;
+        for (int j = 0; j < SUBJECTS; ++j) {
+            file << group[i].grades.marks[j] << " ";
+        }
+        file << endl;
+    }
+    file.close();
+}
+
+int loadGroupFromFile(Student *& group, int & capacity, const string & filename) {
+    ifstream file(filename);
+    if (!file) return 0;
+    int size;
+    file >> size;
+    file.ignore();
+    if (size > capacity) {
+        capacity = size;
+        delete[] group;
+        group = new Student[capacity];
+    }
+    for (int i = 0; i < size; ++i) {
+        getline(file, group[i].name);
+        for (int j = 0; j < SUBJECTS; ++j) {
+            file >> group[i].grades.marks[j];
+        }
+        file.ignore();
+    }
+    file.close();
+    return size;
+}
+
+int main() {
+    // Завдання 1: робота з точками
+    const int SIZE = 5;
+    Point points[SIZE] {};
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "\nPoint " << i + 1 << ":" << endl;
+        inputPoint(points[i]);
+    }
+
+    ofstream file("points.txt");
+    if (file) {
+        file << SIZE << endl;
+        for (int i = 0; i < SIZE; ++i) {
+            writePointToFileStream(points[i], file);
+        }
+        file.close();
+    }
+
+    ifstream file2("points.txt");
+    int count;
+    file2 >> count;
+    Point * readPoints = new Point[count];
+    for (int i = 0; i < count; ++i) {
+        readPointFromFileStream(readPoints[i], file2);
+    }
+    file2.close();
+    cout << "\nPoints from file:" << endl;
+    printPointsArray(readPoints, count);
+    delete[] readPoints;
+
+    // Завдання 2: робота з масивом студентів
+    int capacity = 10;
+    int actualSize = 0;
+    Student * group = new Student[capacity];
+
+    int choice;
+    string filename = "students.txt";
+    do {
+        cout << "\n1. Load group\n2. View group\n3. Add student\n4. View avg > 10\n5. Save group\n6. Exit\nChoice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                actualSize = loadGroupFromFile(group, capacity, filename);
+                cout << "Group loaded. Students: " << actualSize << endl;
+                break;
+            case 2:
+                viewGroup(group, actualSize);
+                break;
+            case 3:
+                if (actualSize >= capacity) {
+                    int newCap = capacity * 2;
+                    Student * newGroup = new Student[newCap];
+                    for (int i = 0; i < actualSize; ++i) {
+                        newGroup[i] = group[i];
+                    }
+                    delete[] group;
+                    group = newGroup;
+                    capacity = newCap;
+                }
+                inputStudent(group[actualSize++]);
+                break;
+            case 4:
+                viewAbove10(group, actualSize);
+                break;
+            case 5:
+                saveGroupToFile(group, actualSize, filename);
+                cout << "Group saved." << endl;
+                break;
+        }
+    } while (choice != 6);
+
+    delete[] group;
+    return 0;
+}
 
 
