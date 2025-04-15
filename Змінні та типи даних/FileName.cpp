@@ -1096,3 +1096,192 @@ int main() {
    // delete[] arr;
  //   return 0;
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//28.03.2025
+ //#include <iostream>
+ //#include <cstdlib>
+ //#include <ctime>
+
+ //using namespace std;
+ //int** createMatrix(int rows, int cols) {
+  //   int** matrix = new int*[rows];
+   //  for (int i = 0; i < rows; i++)
+  //       matrix[i] = new int[cols];
+ //    return matrix;
+ //}
+ //void fillMatrix(int** matrix, int rows, int cols, int min = -10, int max = 10) {
+ //    for (int i = 0; i < rows; i++)
+ //  //       for (int j = 0; j < cols; j++)
+    //         matrix[i][j] = min + rand() % (max - min + 1);
+ //}
+
+
+ //void printMatrix(int** matrix, int rows, int cols) {
+ //    for (int i = 0; i < rows; i++) {
+  //  //      for (int j = 0; j < cols; j++)
+   //          cout << matrix[i][j] << "\t";
+   //      cout << endl;
+ //    }
+ //}
+
+
+ //void addRowToTop(int**& matrix, int& rows, int cols, int* newRow) {
+ //    int** newMatrix = new int*[rows + 1];
+ //    newMatrix[0] = newRow;
+ //    for (int i = 0; i < rows; i++)
+  //       newMatrix[i + 1] = matrix[i];
+ //    delete[] matrix;
+ //    matrix = newMatrix;
+ //    rows++;
+ //}
+
+
+ //void removeRowAt(int**& matrix, int& rows, int index) {
+  //   if (index < 0 || index >= rows) return;
+  //   delete[] matrix[index];
+ //    int** newMatrix = new int*[rows - 1];
+ //    for (int i = 0, j = 0; i < rows; i++) {
+    //     if (i != index)
+    // //         newMatrix[j++] = matrix[i];
+  //   }
+  //   delete[] matrix;
+  //   matrix = newMatrix;
+  //   rows--;
+ //}
+
+
+ //void insertRowAt(int**& matrix, int& rows, int cols, int index, int* newRow) {
+ //    if (index < 0 || index > rows) return;
+   //  int** newMatrix = new int*[rows + 1];
+ //    for (int i = 0, j = 0; i < rows + 1; i++) {
+  // //       if (i == index)
+  //           newMatrix[i] = newRow;
+ //        else
+  //           newMatrix[i] = matrix[j++];
+ //    }
+ //    delete[] matrix;
+ //    matrix = newMatrix;
+ //    rows++;
+ //}
+
+
+ //int** createTrianMatrix(int rows) {
+ //    int** matrix = new int*[rows];
+ //    for (int i = 0; i < rows; i++)
+ //        matrix[i] = new int[i + 1];
+ //    return matrix;
+ //}
+
+
+ //void fillRandTrianMatrix(int** matrix, int rows, int left = 0, int right = 100) {
+  //   for (int i = 0; i < rows; i++)
+   //      for (int j = 0; j <= i; j++)
+ //            matrix[i][j] = left + rand() % (right - left + 1);
+ //}
+
+ //void printTrianMatrix(int** matrix, int rows) {
+ //    for (int i = 0; i < rows; i++) {
+ //    //     for (int j = 0; j <= i; j++)
+     //        cout << matrix[i][j] << "\t";
+    //     cout << endl;
+  //   }
+ //}
+
+
+ //int** transposeMatrix(int** matrix, int rows, int cols) {
+ //    int** transposed = new int*[cols];
+ //    for (int i = 0; i < cols; i++) {
+ //        transposed[i] = new int[rows];
+  //       for (int j = 0; j < rows; j++) {
+  //           transposed[i][j] = matrix[j][i];
+  //      }
+  //   }
+ // //    return transposed;
+ //}
+
+ //int main() {
+ //    srand(time(nullptr));
+
+  //   int rows = 3, cols = 4;
+   //  int** matrix = createMatrix(rows, cols);
+   //  fillMatrix(matrix, rows, cols);
+
+   //  cout << "Початкова матриця:\n";
+   //  printMatrix(matrix, rows, cols);
+
+   //  int* newRow = new int[cols]{1, 2, 3, 4};
+   // //  addRowToTop(matrix, rows, cols, newRow);
+  //   cout << "\nПісля додавання нового рядка на початок:\n";
+   //  printMatrix(matrix, rows, cols);
+
+   //  int* insertedRow = new int[cols]{9, 9, 9, 9};
+  //   insertRowAt(matrix, rows, cols, 2, insertedRow);
+  //   cout << "\nПісля вставки рядка на позицію 2:\n";
+   //  printMatrix(matrix, rows, cols);
+
+   //  removeRowAt(matrix, rows, 1);
+   //  cout << "\nПісля видалення рядка з позиції 1:\n";
+   //  printMatrix(matrix, rows, cols);
+
+   //  int** transposed = transposeMatrix(matrix, rows, cols);
+  //   cout << "\nТранспонована матриця:\n";
+  //   printMatrix(transposed, cols, rows);
+
+   //  cout << "\nТрикутна матриця:\n";
+   //  int** triMatrix = createTrianMatrix(5);
+  //  fillRandTrianMatrix(triMatrix, 5);
+  //  printTrianMatrix(triMatrix, 5);
+
+//    return 0;
+//}
+
+
+
+
+
+
+
+
+
+
