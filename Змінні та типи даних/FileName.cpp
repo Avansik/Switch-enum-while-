@@ -1280,7 +1280,94 @@ int main() {
 
 
 
+//31.03.2025
+//#include <iostream>
+//#include <cstdlib>
+//#include <ctime>
+//using namespace std;
 
+// Завдання 1
+//using FUN = void(*)(int);
+
+//void square(int side) {
+//    for (int i = 0; i < side; ++i) {
+       // for (int j = 0; j < side; ++j)
+     //       cout << "* ";
+       // cout << endl;
+//    }
+//}
+
+//void triangle(int height) {
+//    for (int i = 1; i <= height; ++i) {
+//        for (int j = 0; j < i; ++j)
+  //          cout << "* ";
+    //    cout << endl;
+  //  }
+//}
+
+// Завдання 2
+//void forEach(int* arr, int size, void(*func)(int&)) {
+    //for (int i = 0; i < size; ++i)
+        //func(arr[i]);
+//}
+
+//void inc(int& x) { x++; }
+//void dbl(int& x) { x *= 2; }
+//void dec(int& x) { x--; }
+
+// Завдання 3
+//void arraysAction(int* a1, int* a2, int* a3, int size, int(*op)(int, int)) {
+    //for (int i = 0; i < size; ++i)
+       // a3[i] = op(a1[i], a2[i]);
+//}
+
+//int add(int a, int b) { return a + b; }
+//int sub(int a, int b) { return a - b; }
+//int mul(int a, int b) { return a * b; }
+//int maxx(int a, int b) { return (a > b) ? a : b; }
+//int avg(int a, int b) { return (a + b) / 2; }
+
+// Завдання 4 (макроси)
+//#define MIN(a,b) (((a)<(b))?(a):(b))
+//#define MAX(a,b) (((a)>(b))?(a):(b))
+//#define SQR(x) ((x)*(x))
+//#define EVEN(x) (((x)%2==0)?"even":"odd")
+
+//int main() {
+ //   srand(time(nullptr));
+
+    // Завдання 1: Вказівник на функцію
+  //  FUN ptr = square;
+ //   cout << "Square 4x4:\n";
+ //   ptr(4);
+//    ptr = triangle;
+   // cout << "\nTriangle height 4:\n";
+//    ptr(4);
+
+    // Завдання 2: Обробка масиву через вказівник на функцію
+ //   int arr[] = {1, 2, 3, 4, 5};
+ //   int size = sizeof(arr) / sizeof(arr[0]);
+//    forEach(arr, size, inc);
+//    cout << "\nArray after inc: ";
+//    for (int x : arr) cout << x << " "; cout << endl;
+
+    // Завдання 3: arraysAction
+//   int a1[] = {1, 2, 3, 4, 5};
+//    int a2[] = {5, 4, 3, 2, 1};
+ //   int a3[5];
+//    arraysAction(a1, a2, a3, 5, maxx);
+//    cout << "\nArray of max values: ";
+//    for (int x : a3) cout << x << " "; cout << endl;
+
+    // Завдання 4: Макроси
+//    int x = 3, y = 7;
+ //   cout << "\nMIN: " << MIN(x, y);
+ //   cout << "\nMAX: " << MAX(x, y);
+ //   cout << "\nSQR(x): " << SQR(x);
+//    cout << "\nx is " << EVEN(x) << endl;
+
+ //   return 0;
+//}
 
 
 
