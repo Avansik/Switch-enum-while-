@@ -851,3 +851,248 @@ int main() {
     cout << "Modified string: " << str << endl;
  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//26.03.2025
+//#include <iostream>
+//#include <cstdlib>
+//#include <ctime>
+
+//using namespace std;
+
+
+//int* createArray(int size) {
+//    return new int[size];
+//}
+
+
+//void fillArray(int* arr, int size, int min = -10, int max = 10) {
+////    for (int i = 0; i < size; i++) {
+//        arr[i] = min + rand() % (max - min + 1);
+//    }
+//}
+
+
+//void printArray(const int* arr, int size) {
+//    for (int i = 0; i < size; i++) {
+////        cout << arr[i] << " ";
+  //  }
+  //  cout << endl;
+//}
+
+
+//void addToFront(int*& arr, int& size, int value) {
+//    int* newArr = new int[size + 1];
+  //  newArr[0] = value;
+  //  for (int i = 0; i < size; i++) {
+  //      newArr[i + 1] = arr[i];
+ //   }
+  //  delete[] arr;
+ //   arr = newArr;
+  //  size++;
+//}
+
+//void addToEnd(int*& arr, int& size, int value) {
+//    int* newArr = new int[size + 1];
+//    for (int i = 0; i < size; i++) {
+//        newArr[i] = arr[i];
+//    }
+//    newArr[size] = value;
+ //   delete[] arr;
+ //   arr = newArr;
+ //   size++;
+//}
+
+//void removeLast(int*& arr, int& size) {
+//    if (size == 0) return;
+//    int* newArr = new int[size - 1];
+//    for (int i = 0; i < size - 1; i++) {
+ //       newArr[i] = arr[i];
+  //  }
+  //  delete[] arr;
+  //  arr = newArr;
+ //   size--;
+//}
+
+
+////void removeFirst(int*& arr, int& size) {
+//    if (size == 0) return;
+//    int* newArr = new int[size - 1];
+//    for (int i = 1; i < size; i++) {
+   //     newArr[i - 1] = arr[i];
+   // }
+  //  delete[] arr;
+   // arr = newArr;
+  //  size--;
+//}
+
+//void removeAt(int*& arr, int& size, int index) {
+//    if (index < 0 || index >= size) return;
+////    int* newArr = new int[size - 1];
+//    for (int i = 0, j = 0; i < size; i++) {
+//        if (i != index) {
+//            newArr[j++] = arr[i];
+//        }
+//    }
+ //   delete[] arr;
+ //   arr = newArr;
+ //   size--;
+//}
+
+
+//void insertAt(int*& arr, int& size, int index, int value) {
+//    if (index < 0 || index > size) return;
+//    int* newArr = new int[size + 1];
+ //   for (int i = 0, j = 0; i < size + 1; i++) {
+ //       if (i == index) newArr[i] = value;
+  //      else newArr[i] = arr[j++];
+ //   }
+  //  delete[] arr;
+  //  arr = newArr;
+  //  size++;
+//}
+
+
+//void removeNegatives(int*& arr, int& size) {
+////    for (int i = 0; i < size; ) {
+//        if (arr[i] < 0)
+  //          removeAt(arr, size, i);
+   //     else
+       //     i++;
+  //  }
+//}
+
+
+//void addBlock(int*& arr, int& size, const int* block, int sizeBlock) {
+//    int* newArr = new int[size + sizeBlock];
+//    for (int i = 0; i < size; i++) newArr[i] = arr[i];
+//    for (int i = 0; i < sizeBlock; i++) newArr[size + i] = block[i];
+//    delete[] arr;
+//    arr = newArr;
+//    size += sizeBlock;
+//}
+
+//void removeBlock(int*& arr, int& size, int index, int length) {
+//    if (index < 0 || index >= size || length <= 0 || index + length > size) return;
+//    int* newArr = new int[size - length];
+//    for (int i = 0, j = 0; i < size; i++) {
+//        if (i < index || i >= index + length) newArr[j++] = arr[i];
+//    }
+//    delete[] arr;
+//    arr = newArr;
+//    size -= length;
+//}
+
+//int* intersect(const int* a, int sizeA, const int* b, int sizeB, int& sizeOut) {
+//   int* temp = new int[min(sizeA, sizeB)];
+////    sizeOut = 0;
+  //  for (int i = 0; i < sizeA; i++) {
+   //     for (int j = 0; j < sizeB; j++) {
+    //        if (a[i] == b[j]) {
+     //      
+      //          bool exists = false;
+        //        for (int k = 0; k < sizeOut; k++) {
+        //            if (temp[k] == a[i]) {
+        //               exists = true;
+         //              break;
+           //         }
+           //     }
+           //     if (!exists) {
+            //        temp[sizeOut++] = a[i];
+           //     }
+         //       break;
+       //     }
+     //   }
+  //  }
+ //   int* result = new int[sizeOut];
+ //   for (int i = 0; i < sizeOut; i++) result[i] = temp[i];
+ //   delete[] temp;
+ //   return result;
+//}
+
+
+//int main() {
+//    srand(time(nullptr));
+//
+ //   int size = 5;
+   // int* arr = createArray(size);
+  //  fillArray(arr, size);
+  //  cout << "Початковий масив: ";
+  //  printArray(arr, size);
+
+//    addToFront(arr, size, 100);
+//    cout << "Після додавання 100 на початок: ";
+ //   printArray(arr, size);
+//
+//    addToEnd(arr, size, 200);
+//    cout << "Після додавання 200 в кінець: ";
+//    printArray(arr, size);
+
+//    removeFirst(arr, size);
+//    cout << "Після видалення першого елемента: ";
+//    printArray(arr, size);
+//
+   // removeLast(arr, size);
+  //  cout << "Після видалення останнього елемента: ";
+   // printArray(arr, size);
+
+  //  insertAt(arr, size, 2, 555);
+  //  cout << "Після вставки 555 на позицію 2: ";
+  //  printArray(arr, size);
+
+  //  removeAt(arr, size, 2);
+ //   cout << "Після видалення елемента з позиції 2: ";
+ //   printArray(arr, size);
+
+  //  removeNegatives(arr, size);
+ //   cout << "Після видалення від’ємних: ";
+ //   printArray(arr, size);
+
+  //  int block[] = {9, 8, 7};
+//    addBlock(arr, size, block, 3);
+//    cout << "Після додавання блоку {9, 8, 7}: ";
+ //   printArray(arr, size);
+
+   // removeBlock(arr, size, 1, 3);
+    // // cout << "Після видалення блоку з позиції 1 довжиною 3: ";
+    // printArray(arr, size);
+
+   //  int a[] = {1, 2, 3, 4, 5};
+    // int b[] = {3, 4, 5, 6, 7};
+    // int sizeInt;
+   // int* c = intersect(a, 5, b, 5, sizeInt);
+ //   cout << "Перетин масивів A і B: ";
+   // printArray(c, sizeInt);
+  //  delete[] c;
+
+   // delete[] arr;
+ //   return 0;
+//}
