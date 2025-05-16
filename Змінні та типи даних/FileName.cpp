@@ -1998,3 +1998,66 @@ int main()
 //    Airplane a; 
 //    a
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//30.04.2025
+//#include "Point.h"
+//inline Point::Point()
+//{
+//	x = 0, y = 0;
+//}
+//inline void Point::PrintPoint()
+//{
+//	cout << "x = " << x << endl;
+//	cout << "y = " << y << endl;
+//}
+//Point Point::operator++(int a)
+//{
+//	this->x++;
+//	this->y++;
+//	return *this;
+//}
+//Point Point::operator--(int)
+//{
+//	this->x--;
+//	this->y--;
+//	return *this;
+//}
+//bool Point::operator>(const Point& other)
+//{
+//	if ((this->x + this->y) > (other.x + other.y))
+//	{
+//		return true;
+//	}
+//	else
+	//{
+	//	return false;
+	//}
+//}
+//bool Point::operator<(const Point& other)
+//{
+	//if ((this->x + this->y) < (other.x + other.y))
+	//{
+	//	return true;
+	//}
+	//else
+	//{
+	//	return false;
+	//}
+}
+
