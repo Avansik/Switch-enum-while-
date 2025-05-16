@@ -2206,3 +2206,161 @@ int main()
     Array<string> b = { "Hello", "world" };
     b.print();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 02.05.2025
+#include <iostream>
+#include <string>
+using namespace std;
+
+template<typename T>
+class Array {
+private:
+    T* data;
+    int size;
+public:
+    Array() : data(nullptr), size(0) {}
+    Array(int s) : size(s)
+    {
+        data = new T[size]{};
+    }
+    Array(initializer_list<T> list)
+    {
+        size = list.size();
+        data = new T[size];
+        int i = 0;
+        for (const T& val : list)
+        {
+            data[i++] = val;
+        }
+    }
+    ~Array()
+    {
+        delete[] data;
+    }
+    Array(const Array& other)
+    {
+        size = other.size;
+        data = new T[size];
+        for (int i = 0; i < size; ++i)
+            data[i] = other.data[i];
+    }
+    Array& operator=(const Array& other)
+    {
+        if (this != &other)
+        {
+            delete[] data;
+            size = other.size;
+            data = new T[size];
+            for (int i = 0; i < size; ++i)
+                data[i] = other.data[i];
+        }
+        return *this;
+    }
+    T& operator[](int index)
+    {
+        return data[index];
+    }
+    const T& operator[](int index) const
+    {
+        return data[index];
+    }
+    int getSize() const
+    {
+        return size;
+    }
+    void print() const
+    {
+        for (int i = 0; i < size; ++i)
+            cout << data[i] << " ";
+        cout << endl;
+    }
+    int binarySearch(T key) const
+    {
+        int B = 0, E = size - 1;
+        while (B <= E)
+        {
+            int p = (B + E) / 2;
+            if (key > data[p])
+            {
+                B = p + 1;
+            }
+            else if (key < data[p])
+            {
+                E = p - 1;
+            }
+            else
+            {
+                return p;
+            }
+        }
+        return -1;
+    }
+    T findMax() const
+    {
+        T maxVal = data[0];
+        for (int i = 1; i < size; i++)
+        {
+            if (data[i] > maxVal)
+                maxVal = data[i];
+        }
+        return maxVal;
+    }
+    T findMin() const
+    {
+        T minVal = data[0];
+        for (int i = 1; i < size; i++)
+        {
+            if (data[i] < minVal)
+                minVal = data[i];
+        }
+        return minVal;
+    }
+};
+template<typename T>
+void BubbleSort(Array<T>& arr)
+{
+    for (int i = 0; i < arr.getSize(); i++)
+    {
+        for (int j = arr.getSize() - 1; j > i; j--)
+        {
+            if (arr[j - 1] > arr[j])
+            {
+                T temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    Array<int> a = { 4, 3, 2, 1 };
+    a.print();
+    BubbleSort(a);
+    a.print();
+    cout << "Max: " << a.findMax() << endl;
+    cout << "Min: " << a.findMin() << endl;
+    cout << "Binary Search (2): " << a.binarySearch(2) << endl;
+    Array<string> b = { "world", "Hello" };
+    b.print();
+    BubbleSort(b);
+    b.print();
+}
