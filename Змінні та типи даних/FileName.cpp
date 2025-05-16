@@ -2364,3 +2364,121 @@ int main()
     BubbleSort(b);
     b.print();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//05.05.2025
+#include <iostream>
+using namespace std;
+#include <iostream>
+using namespace std;
+
+class Stack {
+	enum { EMPTY = -1 };
+	char* arr;
+	int size;
+	int topIndex;
+public:
+	Stack() = delete;
+
+	Stack(int size) :size(size)
+	{
+		arr = new char[size];
+		topIndex = EMPTY;
+	}
+	bool IsFull()const
+	{
+		return topIndex == size - 1;
+	}
+	bool Push(int elem)
+	{
+		if (!IsFull())
+		{
+			arr[++topIndex] = elem;
+			return true;
+		}
+		return false;
+	}
+	bool IsEmpty()const
+	{
+		return topIndex == EMPTY;
+	}
+	char Pop()
+	{
+		if (!IsEmpty())
+		{
+			return arr[topIndex--];
+		}
+	}
+	int Peek()
+	{
+		if (!IsEmpty())
+		{
+			return arr[topIndex];
+		}
+	}
+	int GetCount()const
+	{
+		return topIndex + 1;
+	}
+	void Clear()
+	{
+		topIndex = EMPTY;
+	}
+	void Print()const
+	{
+		for (int i = 0; i < GetCount(); i++)
+		{
+			cout << arr[i] << " ";
+		}
+		cout << endl;
+	}
+	~Stack()
+	{
+		if (arr != nullptr)
+			delete[]arr;
+	}
+};
+int main()
+{
+ 
+	Stack s(5);
+	s.Push('a');
+	s.Push('b');
+	s.Push('c');
+	s.Push('d');
+	s.Push('e');
+	s.Print();
+	cout << "Count: " << s.GetCount() << endl;
+	cout << "Pop: " << s.Pop() << endl;
+	s.Print();
+	cout << "Count: " << s.GetCount() << endl;
+	s.Clear();
+	cout << "Count: " << s.GetCount() << endl;
+}
