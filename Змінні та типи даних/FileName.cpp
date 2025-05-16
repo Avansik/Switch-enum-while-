@@ -2059,5 +2059,53 @@ int main()
 	//{
 	//	return false;
 	//}
-}
+//}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//30.04.2025
+/*Створити клас Point – точка на площині (x, y). Реалізувати набір відповідних констуркторів, метод Print() та перевантажити наступні оператори:
+-- ++ – збільшує/зменшує кожну координату на 1
+> < – перевіряє точки на розташування (ближче/далі) відносно початкової координати (0:0)
+! – змінює значення координат на протилежне*/
+//#include <iostream>
+//#include "Point.h"
+//using namespace std;
+//int main()
+//{   
+//Class Point 
+//{
+//int x;
+//int y;
+//}
+//2
+//class Vector
+//{
+//Point * points;
+//int countPoint;
+//}
+//    Point p ;
+//    Vector vec;
+  // p.operator++(2);
+  //  p.operator--(2);
+ //   p.operator!();
+ //   p.operator>(p);
+//  p.operator<(p);
+//  p.PrintPoint();
+//  vec.AddPoint(p);
+//  vec.Show();
+// vec.operator=(vec);
+//  vec.~Vector();
+//}
