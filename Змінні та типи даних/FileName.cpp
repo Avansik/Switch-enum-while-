@@ -2109,3 +2109,100 @@ int main()
 // vec.operator=(vec);
 //  vec.~Vector();
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 02.05.2025
+//#include <iostream>
+//using namespace std;
+//template<typename T>
+//class Array {
+//private:
+//    T* data;
+//    int size;
+public:
+    Array() : data(nullptr), size(0) {}
+    Array(int s) : size(s) 
+    {
+        data = new T[size]{};
+    }
+    Array(initializer_list<T> list) 
+    {
+        size = list.size();
+        data = new T[size];
+        int i = 0;
+        for (const T& val : list) 
+        {
+            data[i++] = val;
+        }
+    }
+    ~Array() 
+    {
+        delete[] data;
+    }
+    Array(const Array& other) 
+    {
+        size = other.size;
+        data = new T[size];
+        for (int i = 0; i < size; ++i)
+            data[i] = other.data[i];
+    }
+    Array& operator=(const Array& other) 
+    {
+        if (this != &other) 
+        {
+            delete[] data;
+            size = other.size;
+            data = new T[size];
+            for (int i = 0; i < size; ++i)
+                data[i] = other.data[i];
+        }
+        return *this;
+    }
+    T& operator[](int index) 
+    {
+        return data[index];
+    }
+    const T& operator[](int index) const 
+    {
+        return data[index];
+    }
+    int getSize() const 
+    {
+        return size;
+    }
+    void print() const 
+    {
+        for (int i = 0; i < size; ++i)
+            cout << data[i] << " ";
+        cout << endl;
+    }
+};
+int main() 
+{
+    Array<int> a = { 1, 2, 3, 4 };
+    a.print();
+    Array<string> b = { "Hello", "world" };
+    b.print();
+}
