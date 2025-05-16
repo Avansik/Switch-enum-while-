@@ -1949,3 +1949,52 @@ int main()
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//28.04.2025
+//#include <iostream>
+//using namespace std;
+//class Airplane
+//{
+//    string model;
+//    string type;
+//    int quantiti_passagers;
+//    int max_quantiti_passagers;
+//public:
+//    friend bool operator==(const Airplane& one, const Airplane& two);
+
+//};
+// bool operator==(const Airplane& one, const Airplane& two)
+//{
+//    if (one.type == two.type)
+//    {
+//        return true;
+//    }
+//    else
+ //   {
+//        return false;
+//    }
+//}
+//int main()
+//{
+//    Airplane a; 
+//    a
+//}
