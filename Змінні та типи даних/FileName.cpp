@@ -2482,3 +2482,134 @@ int main()
 	s.Clear();
 	cout << "Count: " << s.GetCount() << endl;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 05/25/2025 
+// #include <iostream>
+// using namespace std;
+// template<typename T>
+// class List
+// {
+//     struct Node
+//     {
+//         T value;
+//         Node* next;
+//         Node(T value, Node* next) :value(value), next(next) {}
+//     };
+// private:
+//     Node* head;
+// public:
+//     List()
+//     {
+//         head = nullptr;
+//     }
+//     void AddToHead(T value)
+//     {
+//         Node* newNode = new Node(value, head);
+//         head = newNode;
+//     }
+//     void Print()const
+//     {
+//         Node* current = head;
+//         while (current != nullptr)
+//         {
+//             cout << current->value << " ";
+//             current = current->next;
+//         }
+//         cout << endl;
+//     }
+//     ~List()
+//     {
+//         Node* current = nullptr;
+//         while (head != nullptr)
+//         {
+//             current = head;
+//             head = head->next;
+//             delete current;
+//         }
+//     }
+//     void AddToTail(T value)
+//     {
+//         Node* newNode = new Node(value, nullptr);
+//         if (head == nullptr)
+//         {
+//             head = newNode;
+//         }
+//         else {
+//             Node* current = head;
+//             while (current->next != nullptr)
+//             {
+//                 current = current->next;
+//             }
+//             current->next = newNode;
+//         }
+//     }
+//     T GetElement(int pos)
+//     {
+//         Node* current = head;
+//         int i = 1;
+//         while (current != nullptr)
+//         {
+//             if (pos == i) return current->value;
+//             current = current->next;
+//             i++;
+//         }
+//     }
+//     T operator[](int pos)
+//     {
+//         Node* current = head;
+//         int i = 1;
+//         while (current != nullptr)
+//         {
+//             if (pos == i) return current->value;
+//             current = current->next;
+//             i++;
+//         }
+//     }
+//     void DeleteFromHead()
+//         {
+//         if (head == nullptr) return;
+ 
+//         Node* temp = head;
+//         head = head->next;
+//         delete temp;
+//         }
+// };
+// int main()
+// {
+//     List<int> l;
+//     l.AddToTail(100);
+//     l.AddToTail(98);
+//     l.Print();
+//     l.DeleteFromHead();
+//     l.Print();
+ 
+ 
+ 
+// }
