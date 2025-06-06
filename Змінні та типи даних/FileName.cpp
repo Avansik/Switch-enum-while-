@@ -2786,3 +2786,285 @@ int main()
 //     Train t2(t1);
 //     t2.Show();
 // }
+
+
+
+
+
+
+
+
+// 05/31/2025
+
+// #include <iostream>
+
+// using namespace std;
+ 
+// struct Vagon {
+
+//     int num;
+
+//     int places;
+
+//     int passengers;
+
+// };
+ 
+// template<typename T>
+
+// class List {
+
+// private:
+
+//     T* vagons;
+
+//     int countVagon;
+
+// public:
+
+//     List() {
+
+//         vagons = nullptr;
+
+//         countVagon = 0;
+
+//     }
+
+//     void AddToHead(Vagon vagon) {
+
+//         countVagon++;
+
+//         T* tmp = new T[countVagon];
+
+//         tmp[0] = vagon;
+
+//         for (int i = 0; i < countVagon - 1; i++) {
+
+//             tmp[i + 1] = vagons[i];
+
+//         }
+
+//         if (vagons != nullptr) delete[] vagons;
+
+//         vagons = tmp;
+
+//     }
+
+//     void AddToTail(Vagon vagon) {
+
+//         countVagon++;
+
+//         T* tmp = new T[countVagon];
+
+//         for (int i = 0; i < countVagon - 1; i++) {
+
+//             tmp[i] = vagons[i];
+
+//         }
+
+//         tmp[countVagon - 1] = vagon;
+
+//         if (vagons != nullptr) delete[] vagons;
+
+//         vagons = tmp;
+
+//     }
+
+//     void DeleteFromHead() {
+
+//         if (countVagon == 0) return;
+
+//         countVagon--;
+
+//         if (countVagon == 0) {
+
+//             delete[] vagons;
+
+//             vagons = nullptr;
+
+//             return;
+
+//         }
+
+//         T* tmp = new T[countVagon];
+
+//         for (int i = 0; i < countVagon; i++) {
+
+//             tmp[i] = vagons[i + 1];
+
+//         }
+
+//         delete[] vagons;
+
+//         vagons = tmp;
+
+//     }
+
+//     void DeleteFromTail() {
+
+//         if (countVagon == 0) return;
+
+//         countVagon--;
+
+//         if (countVagon == 0) {
+
+//             delete[] vagons;
+
+//             vagons = nullptr;
+
+//             return;
+
+//         }
+
+//         T* tmp = new T[countVagon];
+
+//         for (int i = 0; i < countVagon; i++) {
+
+//             tmp[i] = vagons[i];
+
+//         }
+
+//         delete[] vagons;
+
+//         vagons = tmp;
+
+//     }
+
+//     void Show() const {
+
+//         for (int i = 0; i < countVagon; i++) {
+
+//             cout << "Vagon Number: " << vagons[i].num << endl;
+
+//             cout << "Number of passengers: " << vagons[i].passengers << endl;
+
+//             cout << "Number of places: " << vagons[i].places << endl;
+
+//         }
+
+//     }
+
+//     int getCount() const {
+
+//         return countVagon;
+
+//     }
+
+//     ~List() {
+
+//         if (vagons != nullptr) {
+
+//             delete[] vagons;
+
+//         }
+
+//     }
+
+// };
+ 
+// class Train {
+
+//     List<Vagon> vagons;
+
+//     string name;
+
+// public:
+
+//     Train() {
+
+//         name = "No name";
+
+//     }
+
+//     Train(string name) {
+
+//         this->name = name;
+
+//     }
+
+//     Train(const Train& other) {
+
+//         this->name = other.name;
+
+//         this->vagons = other.vagons;
+
+//     }
+
+//     void Show() {
+
+//         cout << "Train name: " << name << endl;
+
+//         cout << "Number of vagons: " << vagons.getCount() << endl;
+
+//         vagons.Show();
+
+//     }
+
+//     void addVagon(Vagon vagon) {
+
+//         vagons.AddToTail(vagon);
+
+//     }
+
+//     void AddToHead(Vagon vagon) {
+
+//         vagons.AddToHead(vagon);
+
+//     }
+
+//     void DeleteFromHead() {
+
+//         vagons.DeleteFromHead();
+
+//     }
+
+//     void DeleteFromTail() {
+
+//         vagons.DeleteFromTail();
+
+//     }
+
+// };
+ 
+// int main() {
+
+//     Train t1("Ford");
+
+//     t1.Show();
+
+//     Vagon vagon1{ 5, 20, 15 };
+
+//     cout << "\nAdded vagon to tail" << endl;
+
+//     t1.addVagon(vagon1);
+
+//     t1.Show();
+
+//     Vagon vagon2{ 6, 30, 10 };
+
+//     cout << "\nAdded vagon to head" << endl;
+
+//     t1.AddToHead(vagon2);
+
+//     t1.Show();
+
+//     cout << "\nDeleted vagon from head" << endl;
+
+//     t1.DeleteFromHead();
+
+//     t1.Show();
+
+//     cout << "\nDeleted vagon from tail" << endl;
+
+//     t1.DeleteFromTail();
+
+//     t1.Show();
+
+//     cout << "\nConstructor copy" << endl;
+
+//     Train t2(t1);
+
+//     t2.Show();
+
+// }
+ 
